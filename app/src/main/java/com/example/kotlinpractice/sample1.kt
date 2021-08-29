@@ -1,7 +1,7 @@
 package com.example.kotlinpractice
 
 fun main() {
-    forAndWhile()
+    nullcheck()
 }
 //    4. 조건식
 
@@ -84,8 +84,8 @@ fun array() {
 // 6. for / while
 
 fun forAndWhile() {
-    val student = arrayListOf("joyce", "james", "Jenny", "Jennifer")
-    for(name in student) {
+    val students = arrayListOf("joyce", "james", "Jenny", "Jennifer")
+    for(name in students) {
         println("$name")
     }
 
@@ -97,11 +97,29 @@ fun forAndWhile() {
     }
     println(sum)
 
+    for((index, name) in students.withIndex()) {
+        println("${index+1}번째 학생 : $name")
+    }
+
     var index = 0
     while(index < 10) {
         println("current index: $index")
         index++
     }
+}
+
+// 7. Nullable , NonNull
+
+fun nullcheck() {
+    var name : String = "Clara"
+    var nullName : String? = null
+    var nameInUpperCase = name.toUpperCase()
+    var nullNameInUpperCase = nullName?.toUpperCase()
+
+    // ?:
+
+    val lastName : String? = null
+    var fullName = name + " " + (lastName?: "No lastName")
 
 }
 
