@@ -1,7 +1,7 @@
 package com.example.kotlinpractice
 
 fun main() {
-    nullcheck()
+    ignoreNulls("aaa")
 }
 //    4. 조건식
 
@@ -122,6 +122,21 @@ fun nullcheck() {
     var fullName = name + " " + (lastName?: "No lastName")
 
 }
+
+// !! 널 아님
+fun ignoreNulls(str: String?) {
+    val mMotNull : String = str!!
+    val upper = mMotNull.toUpperCase()
+
+    val email : String? = "clara@naver.com"
+    // email이 스트링이면 let 함수를 실행해라
+    //
+    email?.let{
+        println("$it")
+    }
+}
+
+
 
 
 
